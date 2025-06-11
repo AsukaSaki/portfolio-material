@@ -32,7 +32,7 @@ body {
 
 .main-container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 h1 { font-size: 4rem; font-weight: 700; line-height: 1.1; color: var(--md-sys-color-primary); }
-h2 { font-size: 2.8rem; font-weight: 500; text-align: center; margin-bottom: 60px; letter-spacing: .5px; }
+h2 { font-size: 2.8rem; font-weight: 500; text-align: center; margin-bottom: 60px; letter-spacing: .5px;color: var(--md-sys-color-on-background); /* 确保它也使用背景上的文字颜色 */ }
 h3 { font-size: 1.5rem; color: var(--md-sys-color-on-surface); }
 p { color: var(--md-sys-color-on-surface-variant); }
 section { padding: 60px 0; }
@@ -40,7 +40,7 @@ section { padding: 60px 0; }
 /* --- 导航栏 --- */
 header { padding: 20px 0; }
 nav { display: flex; justify-content: space-between; align-items: center; }
-nav .logo { font-size: 1.5rem; font-weight: 700; }
+nav .logo { font-size: 1.5rem; font-weight: 700;color: var(--md-sys-color-on-background); /* 让它使用背景上的文字颜色 */ }
 nav .nav-links { display: flex; gap: 10px; }
 nav a { text-decoration: none; color: var(--md-sys-color-secondary); padding: 8px 16px; border-radius: 50px; font-weight: 500; transition: background-color 0.3s ease; }
 nav a.active, nav a:hover { color: var(--md-sys-color-on-primary-container); background-color: var(--md-sys-color-primary-container); }
@@ -231,6 +231,8 @@ body[data-theme="theme-night"] {
     --md-sys-color-on-surface: #e3e2e6; /* 亮灰色文字 */
     --md-sys-color-on-surface-variant: #c4c6d0; /* 次要亮灰文字 */
     --md-sys-color-background: #1a1c20; /* 深蓝灰色背景 */
+    --md-sys-color-on-background: #e3e2e6; /* 定义在深色背景上的文字颜色 */
+    /* ======================== */
 }
 
 /* 主题四：清晨 (清新薄荷) */
