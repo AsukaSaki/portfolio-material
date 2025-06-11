@@ -8,11 +8,11 @@
     --md-sys-color-secondary: #585e71; /* 次要色 */
     --md-sys-color-on-secondary: #ffffff;
     
-    --md-sys-color-surface: #fdfbff; /* 表层颜色 (卡片等) */
+    --md-sys-color-surface: #fffbf7; /* 更暖的白色表层 */
     --md-sys-color-on-surface: #1a1c20; /* 表层上的文字 */
     --md-sys-color-on-surface-variant: #44474e; /* 表层上的次要文字 */
     
-    --md-sys-color-background: #f0f2f5; /* 主背景色 */
+    --md-sys-color-background: #f5f2eb; /* 柔和的米白色背景 */
     --md-sys-color-on-background: #1a1c20;
 
     --md-sys-elevation-level-1: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
