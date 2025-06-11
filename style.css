@@ -1,0 +1,88 @@
+/* --- Material You 色盘定义 --- */
+:root {
+    --md-sys-color-primary: #3b5998; /* 主色 - 柔和的靛蓝 */
+    --md-sys-color-on-primary: #ffffff; /* 主色上的文字颜色 */
+    --md-sys-color-primary-container: #d9e2ff; /* 主色容器 */
+    --md-sys-color-on-primary-container: #001848; /* 主色容器上的文字 */
+    
+    --md-sys-color-secondary: #585e71; /* 次要色 */
+    --md-sys-color-on-secondary: #ffffff;
+    
+    --md-sys-color-surface: #fdfbff; /* 表层颜色 (卡片等) */
+    --md-sys-color-on-surface: #1a1c20; /* 表层上的文字 */
+    --md-sys-color-on-surface-variant: #44474e; /* 表层上的次要文字 */
+    
+    --md-sys-color-background: #f0f2f5; /* 主背景色 */
+    --md-sys-color-on-background: #1a1c20;
+
+    --md-sys-elevation-level-1: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    --md-sys-elevation-level-2: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* --- 全局与基础样式 --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    background-color: var(--md-sys-color-background);
+    color: var(--md-sys-color-on-background);
+    line-height: 1.6;
+}
+
+.main-container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+h1 { font-size: 4rem; font-weight: 700; line-height: 1.1; color: var(--md-sys-color-primary); }
+h2 { font-size: 2.8rem; font-weight: 500; text-align: center; margin-bottom: 60px; letter-spacing: .5px; }
+h3 { font-size: 1.5rem; color: var(--md-sys-color-on-surface); }
+p { color: var(--md-sys-color-on-surface-variant); }
+section { padding: 80px 0; }
+
+/* --- 导航栏 --- */
+header { padding: 20px 0; }
+nav { display: flex; justify-content: space-between; align-items: center; }
+nav .logo { font-size: 1.5rem; font-weight: 700; }
+nav .nav-links { display: flex; gap: 10px; }
+nav a { text-decoration: none; color: var(--md-sys-color-secondary); padding: 8px 16px; border-radius: 50px; font-weight: 500; transition: background-color 0.3s ease; }
+nav a.active, nav a:hover { color: var(--md-sys-color-on-primary-container); background-color: var(--md-sys-color-primary-container); }
+
+/* --- Hero Section --- */
+#hero { text-align: center; padding: 100px 0; }
+#hero p { font-size: 1.25rem; max-width: 600px; margin: 20px auto 40px; }
+.cta-button { display: inline-flex; align-items: center; gap: 12px; background-color: var(--md-sys-color-primary); color: var(--md-sys-color-on-primary); padding: 16px 24px; border-radius: 50px; text-decoration: none; font-weight: 500; font-size: 1rem; box-shadow: var(--md-sys-elevation-level-1); transition: all 0.2s ease-in-out; }
+.cta-button:hover { transform: translateY(-2px); box-shadow: var(--md-sys-elevation-level-2); }
+
+/* --- 作品集 --- */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.gallery-item { background-color: var(--md-sys-color-surface); border-radius: 24px; overflow: hidden; box-shadow: var(--md-sys-elevation-level-1); cursor: pointer; transition: all 0.3s ease; }
+.gallery-item:hover { transform: translateY(-8px); box-shadow: var(--md-sys-elevation-level-2); }
+.gallery-item img { width: 100%; height: 240px; display: block; object-fit: cover; }
+.gallery-item .item-info { padding: 20px; }
+.item-info h3 { font-size: 1.25rem; margin-bottom: 4px; }
+.item-info p { font-size: 0.9rem; }
+
+/* --- 关于我 --- */
+.about-card { display: flex; align-items: center; gap: 40px; background-color: var(--md-sys-color-surface); padding: 50px; border-radius: 28px; box-shadow: var(--md-sys-elevation-level-1); }
+.profile-photo { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; }
+.about-text h3 { margin-bottom: 15px; }
+
+/* --- 悬浮操作按钮 (FAB) --- */
+.fab { position: fixed; bottom: 40px; right: 40px; width: 60px; height: 60px; background-color: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); border-radius: 18px; display: flex; justify-content: center; align-items: center; box-shadow: var(--md-sys-elevation-level-2); transition: all 0.2s ease-in-out; text-decoration: none; }
+.fab:hover { transform: scale(1.1); box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); }
+.fab .material-icons-outlined { font-size: 28px; }
+
+/* --- 灯箱与页脚 --- */
+footer { text-align: center; padding: 40px; color: var(--md-sys-color-on-surface-variant); font-size: 0.9rem; }
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); animation: fadeIn 0.3s; }
+.modal-content { margin: auto; display: block; max-width: 85%; max-height: 80%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 16px; }
+#modal-caption { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); text-align: center; color: #ccc; width: 80%; }
+#modal-title { font-size: 1.5rem; color: #fff; }
+#modal-details { font-size: 1rem; color: #ccc; }
+.close-button { position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; }
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+
+/* --- 响应式 --- */
+@media (max-width: 768px) {
+    .main-container { padding: 0 20px; }
+    h1 { font-size: 3rem; }
+    .about-card { flex-direction: column; text-align: center; }
+}
