@@ -277,3 +277,37 @@ body[data-theme="theme-morning"] {
 body, .gallery-item, .about-card, .skills-card, .tag, nav a {
     transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
+/* --- 新增样式：翻页控制器 --- */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.pagination-controls button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    border: 1px solid #c8c6d0;
+    background-color: transparent;
+    color: var(--md-sys-color-secondary);
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pagination-controls button:hover {
+    background-color: var(--md-sys-color-primary-container);
+    border-color: transparent;
+}
+
+.pagination-controls button.active {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    border-color: transparent;
+}
