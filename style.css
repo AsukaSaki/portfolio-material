@@ -190,3 +190,88 @@ footer { text-align: center; padding: 40px; color: var(--md-sys-color-on-surface
 .tv-control .material-icons-outlined {
     font-size: 18px;
 }
+/* --- 新增样式：多主题色盘与切换按钮 --- */
+
+/* 1. 定义四套色盘 */
+
+/* 主题一：日间 (默认，我们之前的米白) */
+body[data-theme="theme-day"] {
+    --md-sys-color-primary: #3b5998;
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-primary-container: #d9e2ff;
+    --md-sys-color-on-primary-container: #001848;
+    --md-sys-color-secondary: #585e71;
+    --md-sys-color-surface: #fffbf7; /* 暖白色表层 */
+    --md-sys-color-on-surface: #1a1c20;
+    --md-sys-color-on-surface-variant: #44474e;
+    --md-sys-color-background: #f5f2eb; /* 柔和米白背景 */
+}
+
+/* 主题二：夕阳 (温暖橘黄) */
+body[data-theme="theme-sunset"] {
+    --md-sys-color-primary: #c54929; /* 柔和的橘色 */
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-primary-container: #ffdbd0; /* 浅桃色 */
+    --md-sys-color-on-primary-container: #480f00;
+    --md-sys-color-secondary: #77564d;
+    --md-sys-color-surface: #fff8f6;
+    --md-sys-color-on-surface: #201a18;
+    --md-sys-color-on-surface-variant: #524440;
+    --md-sys-color-background: #fdeee9; /* 极浅的暖粉色背景 */
+}
+
+/* 主题三：夜晚 (静谧幽蓝) - 暗色模式 */
+body[data-theme="theme-night"] {
+    --md-sys-color-primary: #adc6ff; /* 亮蓝色，在暗背景上更醒目 */
+    --md-sys-color-on-primary: #002c6b;
+    --md-sys-color-primary-container: #264073;
+    --md-sys-color-on-primary-container: #d7e2ff;
+    --md-sys-color-secondary: #c0c6dd;
+    --md-sys-color-surface: #2e3035; /* 深灰色表层 */
+    --md-sys-color-on-surface: #e3e2e6; /* 亮灰色文字 */
+    --md-sys-color-on-surface-variant: #c4c6d0; /* 次要亮灰文字 */
+    --md-sys-color-background: #1a1c20; /* 深蓝灰色背景 */
+}
+
+/* 主题四：清晨 (清新薄荷) */
+body[data-theme="theme-morning"] {
+    --md-sys-color-primary: #006a60; /* 深青色 */
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-primary-container: #9cf2e5; /* 亮薄荷色 */
+    --md-sys-color-on-primary-container: #00201c;
+    --md-sys-color-secondary: #4b635e;
+    --md-sys-color-surface: #f6fcf9; /* 带有微绿的白色表层 */
+    --md-sys-color-on-surface: #171d1b;
+    --md-sys-color-on-surface-variant: #3f4946;
+    --md-sys-color-background: #edf3f1; /* 极浅的冷色背景 */
+}
+
+/* 2. 按钮和导航栏容器的样式 */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+#theme-toggle-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#theme-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+/* 确保所有组件的颜色都能平滑过渡 */
+body, .gallery-item, .about-card, .skills-card, .tag, nav a {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
