@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>你的名字 - 画师 (Material You)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+
+        <header>
+            <nav>
+                <div class="logo">你的名字</div>
+                <div class="nav-links">
+                    <a href="#hero" class="active">首页</a>
+                    <a href="#gallery">作品集</a>
+                    <a href="#about">关于</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section id="hero">
+                <div class="hero-content">
+                    <h1>光与影的叙事者</h1>
+                    <p>探索数字艺术的无限可能。</p>
+                    <a href="#gallery" class="cta-button">
+                        <span class="material-icons-outlined">palette</span>
+                        查看作品集
+                    </a>
+                </div>
+            </section>
+
+            <section id="gallery">
+                <h2>作品集</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-title="星夜下的鲸鱼" data-details="2024 | Procreate" data-img-src="images/artwork1.jpg">
+                        <img src="images/artwork1.jpg" alt="作品1">
+                        <div class="item-info">
+                           <h3>星夜下的鲸鱼</h3>
+                           <p>2024 | Procreate</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-title="赛博都市" data-details="2023 | Photoshop" data-img-src="images/artwork2.jpg">
+                        <img src="images/artwork2.jpg" alt="作品2">
+                        <div class="item-info">
+                           <h3>赛博都市</h3>
+                           <p>2023 | Photoshop</p>
+                        </div>
+                    </div>
+                    </div>
+            </section>
+
+            <section id="about">
+                <h2>关于我</h2>
+                <div class="about-card">
+                    <img src="images/profile-photo.jpg" alt="个人照片" class="profile-photo">
+                    <div class="about-text">
+                        <h3>你好，我是[你的名字]</h3>
+                        <p>一位专注于概念设计与数字插画的画师。我热爱用色彩和光影构建引人入胜的世界，探索幻想与现实的边界。</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 你的名字. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+    <a href="mailto:your.email@example.com" class="fab">
+        <span class="material-icons-outlined">email</span>
+    </a>
+
+    <div id="modal" class="modal">
+        <span class="close-button">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <div id="modal-caption">
+            <h3 id="modal-title"></h3>
+            <p id="modal-details"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
