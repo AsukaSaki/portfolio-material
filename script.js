@@ -91,3 +91,57 @@ setInterval(() => {
 
 // 7. 初始化，确保页面加载时第一张图片是显示的
 showArt(currentArtIndex);
+// --- 新增功能：动态主题切换 ---
+
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggleButton = document.getElementById('theme-toggle-btn');
+    const body = document.body;
+
+    // 定义所有可用的主题
+    const themes = ['theme-day', 'theme-sunset', 'theme-night', 'theme-morning'];
+    let currentThemeIndex = 0;
+
+    // 功能一：根据本地时间获取应有的主题
+    function getThemeByTime() {
+        const hour = new Date().getHours();
+        if (hour >= 5 && hour < 11) { // 5:00 - 10:59 清晨
+            return 'theme-morning';
+        } else if (hour >= 11 && hour < 17) { // 11:00 - 16:59 日间
+            return 'theme-day';
+        } else if (hour >= 17 && hour < 20) { // 17:00 - 19:59 夕阳
+            return 'theme-sunset';
+        } else { // 20:00 - 4:59 夜晚
+            return 'theme-night';
+        }
+    }
+
+    // 功能二：应用主题
+    function applyTheme(themeName) {
+        body.dataset.theme = themeName;
+        // 更新当前主题在列表中的索引，方便手动切换
+        currentThemeIndex = themes.indexOf(themeName);
+    }
+
+    // 功能三：手动切换的逻辑
+    themeToggleButton.addEventListener('click', () => {
+        // 循环切换到下一个主题
+        currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+        const nextTheme = themes[currentThemeIndex];
+        applyTheme(nextTheme);
+        // 将用户的手动选择存入浏览器，这样下次访问会记住用户的选择
+        localStorage.setItem('user-preferred-theme', nextTheme);
+    });
+
+    // --- 初始化逻辑 ---
+    // 检查浏览器中是否已存有用户偏好
+    const savedTheme = localStorage.getItem('user-preferred-theme');
+
+    if (savedTheme && themes.includes(savedTheme)) {
+        // 如果有，就使用用户上次的选择
+        applyTheme(savedTheme);
+    } else {
+        // 如果没有，就根据当前时间自动设置主题
+        const autoTheme = getThemeByTime();
+        applyTheme(autoTheme);
+    }
+});
