@@ -111,3 +111,82 @@ footer { text-align: center; padding: 40px; color: var(--md-sys-color-on-surface
     .about-card { flex-direction: column; text-align: center; }
     .about-grid { grid-template-columns: 1fr; }
 }
+/* --- 新增样式：画作小电视 (Art TV) --- */
+#widgets {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.art-tv-widget {
+    width: 100%;
+    max-width: 600px; /* 控制电视最大宽度 */
+    background-color: #eaddd7; /* 一个温暖的米色作为机身 */
+    padding: 20px;
+    border-radius: 32px; /* M3的大圆角 */
+    box-shadow: var(--md-sys-elevation-level-2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tv-screen {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* 保持16:9的屏幕比例 */
+    background-color: #333;
+    border-radius: 18px; /* 屏幕的圆角要小一些 */
+    overflow: hidden; /* 裁剪图片，确保适应圆角 */
+    position: relative;
+}
+
+.tv-screen img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 图片会自动裁剪以填满屏幕 */
+    opacity: 0; /* 默认所有图片都透明 */
+    transition: opacity 0.6s ease-in-out; /* 定义淡入淡出动画 */
+}
+
+.tv-screen img.active {
+    opacity: 1; /* 拥有active类的图片会显示出来 */
+}
+
+.tv-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.tv-brand {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: var(--md-sys-color-secondary);
+    font-size: 1.2rem;
+}
+
+.tv-control {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--md-sys-color-secondary);
+    transition: background-color 0.2s ease;
+}
+
+.tv-control:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.tv-control .material-icons-outlined {
+    font-size: 18px;
+}
