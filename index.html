@@ -10,23 +10,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 </head>
-<body>
-    <div class="main-container">
+<body data-theme="theme-day"> <div class="main-container">
 
         <header>
             <nav>
-    <div class="logo">ASUKA</div>
-    <div class="nav-controls">
-        <div class="nav-links">
-            <a href="#hero" class="active">首页</a>
-            <a href="#gallery">作品集</a>
-            <a href="#about">关于</a>
-        </div>
-        <button id="theme-toggle-btn" title="切换主题">
-            <span class="material-icons-outlined">tonality</span>
-        </button>
-    </div>
-</nav>
+                <div class="logo">ASUKA</div>
+                <div class="nav-controls">
+                    <div class="nav-links">
+                        <a href="#hero" class="active">首页</a>
+                        <a href="#gallery">作品集</a>
+                        <a href="#about">关于</a>
+                    </div>
+                    <button id="theme-toggle-btn" title="切换主题">
+                        <span class="material-icons-outlined">tonality</span>
+                    </button>
+                </div>
+            </nav>
         </header>
 
         <main>
@@ -41,56 +40,20 @@
                 </div>
             </section>
 
-            <section id="widgets">
-    <div class="art-tv-widget">
-        <div class="tv-screen">
-            <img src="images/artwork1.jpg" alt="作品1" class="active">
-            <img src="images/artwork2.jpg" alt="作品2">
-            <img src="images/profile-photo.jpg" alt="作品3"> 
-            </div>
-        <div class="tv-body">
-            <button class="tv-control prev">
-                <span class="material-icons-outlined">arrow_back_ios</span>
-            </button>
-            <div class="tv-brand">Art TV</div>
-            <button class="tv-control next">
-                <span class="material-icons-outlined">arrow_forward_ios</span>
-            </button>
-        </div>
-    </div>
-</section>
-            
             <section id="gallery">
                 <h2>作品集</h2>
                 
                 <div class="filter-chips">
-                    <div class="chip active">全部</div>
-                    <div class="chip">概念设计</div>
-                    <div class="chip">角色插画</div>
-                    <div class="chip">场景原画</div>
-                    <div class="chip">草稿</div>
+                    <div class="chip active" data-category="全部">全部</div>
+                    <div class="chip" data-category="概念设计">概念设计</div>
+                    <div class="chip" data-category="角色插画">角色插画</div>
+                    <div class="chip" data-category="场景原画">场景原画</div>
+                    <div class="chip" data-category="草稿">草稿</div>
                 </div>
 
-                <div class="gallery-grid">
-                    <div class="gallery-item featured-item" data-title="星夜下的鲸鱼" data-details="这是我最满意的作品之一，探索了深海的静谧与星空的浩瀚之间的联系。" data-img-src="images/artwork1.jpg">
-                        <div class="featured-image">
-                            <img src="images/artwork1.jpg" alt="精选作品">
-                        </div>
-                        <div class="featured-info">
-                            <span>精选作品</span>
-                            <h3>星夜下的鲸鱼</h3>
-                            <p>这幅作品尝试将超现实主义与幻想风格结合，使用 Procreate 进行绘制，重点在于通过细腻的笔触和光影对比，营造出宁静而又充满力量的氛围。</p>
-                        </div>
-                    </div>
+                <div class="gallery-grid"></div>
 
-                    <div class="gallery-item" data-title="赛博都市" data-details="2023 | Photoshop" data-img-src="images/artwork2.jpg">
-                        <img src="images/artwork2.jpg" alt="作品2">
-                        <div class="item-info">
-                           <h3>赛博都市</h3>
-                           <p>2023 | Photoshop</p>
-                        </div>
-                    </div>
-                     </div>
+                <div class="pagination-controls"></div>
             </section>
 
             <section id="about">
@@ -112,8 +75,6 @@
                             <div class="tag">Blender</div>
                             <div class="tag">概念设计</div>
                             <div class="tag">角色设计</div>
-                            <div class="tag">色彩理论</div>
-                            <div class="tag">故事板</div>
                         </div>
                     </div>
                 </div>
@@ -138,7 +99,8 @@
             <p id="modal-details"></p>
         </div>
     </div>
-
+    
+    <script src="gallery-data.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
